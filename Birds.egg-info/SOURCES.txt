@@ -1,0 +1,14 @@
+MANIFEST.in
+birds/Birds.py
+birds/__init__.py
+birds/birds.py
+birds/schema.sql
+birds.egg-info/PKG-INFO
+birds.egg-info/SOURCES.txt
+birds.egg-info/dependency_links.txt
+birds.egg-info/requires.txt
+birds.egg-info/top_level.txt
+birds/static/style.css
+birds/templates/layout.html
+birds/templates/login.html
+birds/templates/show_entries.html

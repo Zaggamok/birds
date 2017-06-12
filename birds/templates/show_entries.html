@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Welcome -->
+<div class="row">
+    <div class="large-12 columns">
+        {% if session.logged_in %}
+        <form action="{{ url_for('add_entry') }}" method=post class=add-entry enctype=multipart/form-data>
+            <dl>
+                <dt>Title:
+                <dd><input type=text size=30 name=title>
+                <dt>Text:
+                <dd><textarea name=text rows=5 cols=40></textarea>
+                <dt>Image:</dt>
+                <dd><input type=file name=file></dd>
+                <dd><input type=submit value=Upload>
+            </dl>
+        </form>
+        {% endif %}
+        <div class="callout">
+            <h3>Welcome</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin posuere sem enim, accumsan convallis risus semper.</p>
+        </div>
+    </div>
+</div>
+
+<div id="body">
+    <div class="row entries">
+        {% for entry in entries %}
+        <div class="large-4 medium-6 small-12 columns">
+            <div class="card card-item">
+                <div class="card-item-img-wrapper">
+                    <img src="{{ entry.imgurl }}">
+                </div>
+                <div class="card-section">
+                    <h3 class="card-item-name">{{ entry.title }}</h3>
+                    <h5 class="card-item-price">sub | title | stuff</h5>
+                    <p class="card-item-description">{{ entry.text|safe }}</p>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <em>No entries here so far</em>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

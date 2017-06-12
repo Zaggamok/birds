@@ -1,0 +1,4 @@
+{
+  "birds/tests/test_birds.py::BirdsTestCase::test_empty_db": true,
+  "birds/tests/test_birds.py::BirdsTestCase::test_login_logout": true
+}

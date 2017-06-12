@@ -1,0 +1,3 @@
+graft birds/templates
+graft birds/static
+include birds/schema.sql
